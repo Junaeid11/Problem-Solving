@@ -1,7 +1,7 @@
 const people = [
   { name: "John", age: 30 },
   { name: "Jane", age: 25 },
-  { name: "Alice", age: 28 },
+  { name: "Alice", age: 88 },
 ];
 function updateAge(peopleArray, name, newAge) {
   let personFound = false;
@@ -17,5 +17,5 @@ function updateAge(peopleArray, name, newAge) {
   return peopleArray;
 }
 
-const updatedPeople = updateAge(people, "Alice", 26);
-console.log(updatedPeople);
+const modifyProperty = updateAge(people, "Alice", 26);
+console.log(modifyProperty);
