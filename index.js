@@ -1,11 +1,10 @@
 (function () {
-    const SWAP_DONE_KEY = 'menuSwapDone';
+    const swapDone = 'menuSwapDone';
   
-    if (sessionStorage.getItem(SWAP_DONE_KEY) === 'true') {
-      console.log("Swap has already been done for this session.");
+    if (sessionStorage.getItem(swapDone) === 'true') {
+      console.log("Swap has already been done");
       return;
     }
-  
     const referenceLink = document.querySelector('a[href="/reference/react"]');
     const communityLink = document.querySelector('a[href="/community"]');
   
@@ -20,13 +19,10 @@
         } else {
           parent.insertBefore(referenceItem, communityItem);
         }
-  
-        sessionStorage.setItem(SWAP_DONE_KEY, 'true');
-        console.log('Successfully swapped Reference and Community menu items.');
+        sessionStorage.setItem(swapDone, 'true');
+        console.log('Successfully swapped');
       } else {
-        console.warn('Swap failed: Could not access parent elements.');
+        console.warn('Swap failed');
       }
-    } else {
-      console.warn('Swap failed: Either items not found or they are not siblings.');
-    }
+    } 
   })();
